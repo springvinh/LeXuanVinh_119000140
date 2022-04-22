@@ -1,0 +1,21 @@
+@page
+@model LeXuanVinh.Pages_News.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h2 class="mt-5" style="max-width: 50vw; font-size:36px">@Html.DisplayFor(model => model.News.Title)</h2>
+    <p style="font-size: 13px;" class="mt-3 mb-5">
+        <i>@Html.DisplayFor(model => model.News.CreateAt)</i>
+        <span> By </span>
+        <span>@Html.DisplayFor(model => model.News.Author)</span>
+    </p>
+    <p>@Html.DisplayFor(model => model.News.Content)</p>
+</div>
+
+<div>
+    <a asp-page="/News/Edit" asp-route-id="@Model.News.ID">Edit</a> |
+    <a asp-page="/Index">Back to List</a>
+</div>
